@@ -2,6 +2,8 @@
 
 namespace ScreenshotHistory
 {
+    // Borrowed from Stack Overflow
+    // http://stackoverflow.com/questions/5852863/fixed-size-queue-which-automatically-dequeues-old-values-upon-new-enques
     public class FixedSizedQueue<T> : ConcurrentQueue<T>
     {
         private readonly object syncObject = new object();
