@@ -21,8 +21,12 @@ assembly_info:
   assembly_informational_version: "{version}-$(ABBREV_COMMIT)"
 
 build_script:
-  - cmd: >-
+  - ps: >-
       msbuild /BinaryLogger /Logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+after_build:
+  - ps: >-
+      cp bin\Release\screenshot-history.exe screenshot-history.exe
 
 artifacts:
   - path: screenshot-history.exe
