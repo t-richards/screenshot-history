@@ -1,0 +1,33 @@
+pull_requests:
+  do_not_increment_build_number: true
+skip_branch_with_pr: true
+branches:
+  only:
+  - master
+
+image: Visual Studio 2017
+
+init:
+- ps: >-
+    $env:ABBREV_COMMIT = $env:APPVEYOR_REPO_COMMIT.substring(0,8)
+
+configuration: Release
+version: '1.0.{build}.0'
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}-$(ABBREV_COMMIT)"
+
+build_script:
+  - ps: >-
+      msbuild /BinaryLogger /Logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+after_build:
+  - ps: >-
+      cp screenshot-history\bin\Release\screenshot-history.exe screenshot-history.exe
+
+artifacts:
+  - path: screenshot-history.exe
+    name: screenshot-history.exe

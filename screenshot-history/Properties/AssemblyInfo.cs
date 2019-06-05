@@ -1,16 +1,16 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+using System.Resources;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("screenshot-history")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Screenshot History")]
+[assembly: AssemblyDescription("Multiple-image clipboard history viewer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("screenshot-history")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("tomrichards.net")]
+[assembly: AssemblyProduct("Screenshot History")]
+[assembly: AssemblyCopyright("Copyright © Tom Richards")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("custom build")]
+[assembly: NeutralResourcesLanguage("en-US")]

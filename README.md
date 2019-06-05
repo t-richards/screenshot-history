@@ -3,7 +3,7 @@
 Windows application that displays your clipboard's most recent image, as well as
 the previous one.
 
-![screenshot-history](https://cloud.githubusercontent.com/assets/3905798/13040298/8a1a8872-d378-11e5-9445-e0efda3e6d4b.png)
+![screenshot-history](https://user-images.githubusercontent.com/3905798/58925770-b8bdfd80-8716-11e9-92b0-50f637f1e55b.png)
 
 # Use case
 
