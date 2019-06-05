@@ -26,7 +26,7 @@ build_script:
 
 after_build:
   - ps: >-
-      cp bin\Release\screenshot-history.exe screenshot-history.exe
+      cp screenshot-history\bin\Release\screenshot-history.exe screenshot-history.exe
 
 artifacts:
   - path: screenshot-history.exe
