@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 
 namespace ScreenshotHistory;
 
-// A queue that keeps only its most recent `size` items. Single-threaded: only
-// ever touched from the UI thread via the clipboard message handler.
-public sealed class FixedSizedQueue<T>(int size) : IEnumerable<T>
+// A queue that keeps only its most recent `size` items, invoking the optional
+// `onEvict` callback on each item as it falls off the end (e.g. to dispose it).
+// Single-threaded: only ever touched from the UI thread via the clipboard
+// message handler.
+public sealed class FixedSizedQueue<T>(int size, Action<T> onEvict = null) : IEnumerable<T>
 {
     private readonly Queue<T> queue = new();
 
@@ -16,7 +17,7 @@ public sealed class FixedSizedQueue<T>(int size) : IEnumerable<T>
         queue.Enqueue(item);
         while (queue.Count > size)
         {
-            queue.Dequeue();
+            onEvict?.Invoke(queue.Dequeue());
         }
     }
 
