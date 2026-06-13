@@ -1,31 +1,25 @@
-﻿using System.Collections.Concurrent;
+using System.Collections;
+using System.Collections.Generic;
 
-namespace ScreenshotHistory
+namespace ScreenshotHistory;
+
+// A queue that keeps only its most recent `size` items. Single-threaded: only
+// ever touched from the UI thread via the clipboard message handler.
+public sealed class FixedSizedQueue<T>(int size) : IEnumerable<T>
 {
-    // Borrowed from Stack Overflow
-    // http://stackoverflow.com/questions/5852863/fixed-size-queue-which-automatically-dequeues-old-values-upon-new-enques
-    public class FixedSizedQueue<T> : ConcurrentQueue<T>
+    private readonly Queue<T> queue = new();
+
+    public int Count => queue.Count;
+
+    public void Enqueue(T item)
     {
-        private readonly object syncObject = new object();
-
-        public int Size { get; private set; }
-
-        public FixedSizedQueue(int size)
+        queue.Enqueue(item);
+        while (queue.Count > size)
         {
-            Size = size;
-        }
-
-        public new void Enqueue(T obj)
-        {
-            base.Enqueue(obj);
-            lock (syncObject)
-            {
-                while (base.Count > Size)
-                {
-                    T outObj;
-                    base.TryDequeue(out outObj);
-                }
-            }
+            queue.Dequeue();
         }
     }
+
+    public IEnumerator<T> GetEnumerator() => queue.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }

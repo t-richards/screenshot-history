@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>ScreenshotHistory</RootNamespace>
     <AssemblyName>screenshot-history</AssemblyName>

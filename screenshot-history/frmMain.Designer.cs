@@ -55,8 +55,8 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(884, 513);
-            this.splitContainer1.SplitterDistance = 460;
+            this.splitContainer1.Size = new System.Drawing.Size(900, 600);
+            this.splitContainer1.SplitterDistance = 448;
             this.splitContainer1.TabIndex = 0;
             // 
             // pictureBox1
@@ -65,7 +65,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 513);
+            this.pictureBox1.Size = new System.Drawing.Size(448, 600);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -76,7 +76,7 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(420, 513);
+            this.pictureBox2.Size = new System.Drawing.Size(448, 600);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 513);
+            this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmMain";
             this.Text = "Screenshot History";
